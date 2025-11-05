@@ -110,7 +110,12 @@ class Workshopslider extends Widget_Base
                                 <a href="<?php the_permalink(); ?>">
                                     <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="<?php the_title_attribute(); ?>">
                                 </a>
-                                   <!-- Dates -->
+                               </div>
+                             <?php endif; ?>
+                            <!-- Title -->
+                            <h3 class="workshops-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+
+                                <!-- Dates -->
                                 <?php 
                                 $dates = get_field('workshop_dates_and_time');
                                 if ($dates) : 
@@ -121,11 +126,8 @@ class Workshopslider extends Widget_Base
                                     </p>
                                 <?php endif; ?>
                                 
-                            </div>
-                            <?php endif; ?>
-                            
-                            <!-- Title -->
-                            <h3 class="workshops-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                           
+                           
 
                             <!-- Excerpt -->
                             <div class="workshop-short-desc"><p><?php echo wp_kses_post(get_the_excerpt()); ?></p></div>
