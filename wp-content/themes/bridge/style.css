@@ -50,8 +50,17 @@ CSS changes can be made in files in the /css/ folder. This is a placeholder file
     z-index: 9999;
     opacity: 1 !important;
 }
-.workshops-slider .slick-arrow::before, .trainer-slider .slick-arrow::before{
-   opacity: 1 !important;
+.workshops-slider .slick-arrow::before, .trainer-slider .slick-arrow::before {
+    opacity: 1 !important;
+    content: '\f105';
+    font-family: 'FontAwesome';
+    font-size: 30px ! IMPORTANT;
+}
+.workshops-slider .slick-arrow.slick-prev::before,  .trainer-slider .slick-arrow.slick-prev::before{
+   transform: rotate(180deg);
+    position: relative;
+    top: 2px;
+    left: -1px;
 }
 .workshops-slider .slick-list, .trainer-slider .slick-list{
     margin: 0 -20px;
@@ -151,6 +160,11 @@ ul.top-info li a:hover, ul.top-info li a:hover i{
     text-align: center;
     margin-top: 20px;
     font-weight: bold;
+}
+.post-container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 50px;
 }
 @media(max-width:1100px){
     .workshops-listing .workshop-item, .trainer-listing .trainer-list{

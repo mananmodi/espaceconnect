@@ -62,6 +62,7 @@ class Widget_Loader {
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Teamslider() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Workshoplisting() );
 		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Teamlisting() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new Widgets\Breadcrumb() );
 	
 		
 	}
