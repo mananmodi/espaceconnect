@@ -84,8 +84,7 @@ class Workshoplisting extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        //$settings['section_title']
-
+    
         $args = array(
             'post_type' => 'product',
             'posts_per_page' => -1

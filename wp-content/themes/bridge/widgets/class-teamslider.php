@@ -78,7 +78,7 @@ class Teamslider extends Widget_Base
         // 1️⃣ Query all trainers
         $trainer_args = array(
             'post_type'      => 'trainer',
-            'posts_per_page' => -1,
+            'posts_per_page' => 10
         );
 
         $trainers = new \WP_Query($trainer_args);

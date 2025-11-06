@@ -88,7 +88,7 @@ class Workshopslider extends Widget_Base
 
         $args = array(
             'post_type' => 'product',
-            'posts_per_page' => -1
+              'posts_per_page' => 10
         );
 
         $workshops =new \WP_Query($args);
