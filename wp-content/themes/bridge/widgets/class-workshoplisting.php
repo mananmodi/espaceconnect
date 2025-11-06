@@ -67,15 +67,15 @@ class Workshoplisting extends Widget_Base
             )
         );
 
-        	$this->add_control(
-			'section_title',
-			array(
-				'label'       => esc_html__( 'Section Title', 'fgi' ),
-				'type'        => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Section - Title', 'fgi' ),
-			)
-		);
-        
+        $this->add_control(
+            'section_title',
+            array(
+                'label'       => esc_html__('Section Title', 'fgi'),
+                'type'        => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => esc_html__('Section - Title', 'fgi'),
+            )
+        );
+
         $this->end_controls_section();
     }
 
@@ -85,63 +85,58 @@ class Workshoplisting extends Widget_Base
         $settings = $this->get_settings_for_display();
 
         //$settings['section_title']
-        
+
         $args = array(
-            'post_type' => 'workshop',
+            'post_type' => 'product',
             'posts_per_page' => -1
         );
 
-        $workshops =new \WP_Query($args);
+        $workshops = new \WP_Query($args);
 
-        
+
 
         if ($workshops->have_posts()) :
 ?>
 
-           <div class="workshops-listing"> <!-- Neutral wrapper class -->
+            <div class="workshops-listing"> <!-- Neutral wrapper class -->
                 <?php while ($workshops->have_posts()) : $workshops->the_post(); ?>
                     <div class="workshop-item"> <!-- Neutral item class -->
-                        
+
                         <!-- Featured Image -->
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="workshops-feature-image">
                                 <a href="<?php the_permalink(); ?>">
                                     <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="<?php the_title_attribute(); ?>">
                                 </a>
-                                <?php 
-                                $dates = get_field('workshop_dates_and_time');
-                                if ($dates) : ?>
-                                    <p class="workshops-dates"><?php echo is_array($dates) ? implode(', ', array_map('esc_html', $dates)) : esc_html($dates); ?></p>
+                                <?php
+                                $dates = get_field('workshop_date', get_the_ID());
+                                if ($dates) :
+                                ?>
+                                    <p class="workshops-dates">
+                                        <?php echo date('F j, Y', strtotime($dates)); ?>
+                                    </p>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
 
                         <!-- Title -->
                         <h3 class="workshops-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <?php // $trainer_id = get_field('trainer_name'); 
-        
-                        //if ( $trainer_id ) {
-                           // $trainer_name = get_field('trainer_name', $trainer_id);
-                           // echo '<p>Trainer Name: ' . esc_html($trainer_name) . '</p>';
-                    //    }?>
-
-                        <!-- Dates -->
-                        
 
                         <!-- Excerpt -->
-                        <div class="workshop-short-desc"><p><?php echo wp_kses_post(get_the_excerpt()); ?></p></div>
+                        <div class="workshop-short-desc">
+                            <p><?php echo wp_kses_post(get_the_excerpt()); ?></p>
+                        </div>
 
                         <!-- Read More Button -->
                         <a href="<?php the_permalink(); ?>" class="workshops-btn">Read More</a>
 
                     </div>
-                <?php endwhile; wp_reset_postdata(); ?>
+                <?php endwhile;
+                wp_reset_postdata(); ?>
             </div>
 
 
-    <?php endif;
-     
-       
+<?php endif;
     }
 
     /** Function content_template() */
