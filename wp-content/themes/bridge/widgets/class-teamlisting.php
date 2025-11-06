@@ -84,7 +84,9 @@ class Teamlisting extends Widget_Base
         $trainers = new \WP_Query($trainer_args);
 
         if ($trainers->have_posts()) :
-?>
+?>             
+          
+
             <div class="trainer-listing">
                 <?php while ($trainers->have_posts()) : $trainers->the_post(); ?>
 

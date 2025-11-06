@@ -166,6 +166,57 @@ ul.top-info li a:hover, ul.top-info li a:hover i{
     margin: 0 auto;
     padding: 100px 50px;
 }
+.category-section {
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    gap: 15px;
+    align-items: center;
+}
+.category-section  span{
+    font-size: 18px;
+    font-weight: 600;
+    color: #38373D;
+    font-family: 'Signika', sans-serif;
+}
+/* Dropdown Styling */
+.dropdown select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    border: 0px solid #e3e3e3;
+    border-radius: 8px;
+    padding: 10px 30px 10px 15px;
+    font-size: 17px;
+    color: #38373D;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='%2338373D' height='24' viewBox='0 0 24 24' width='24'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 30px;
+    font-family: 'Signika', sans-serif;
+    font-weight: normal;
+}
+.dropdown select option {
+    background-color: #ffffff; /* Match dropdown background */
+    color: #38373D; /* Option text color */
+}
+.dropdown select:disabled{
+    color: #38373D;
+}
+.dropdown select option:disabled,.dropdown select option:hover {
+    color: #38373D !important; /* or #ffffff if you want it white too */
+    background-color: #ffffff;
+}
+
+
+.dropdown select:focus {
+  outline: none;
+  box-shadow: unset;
+}
 @media(max-width:1100px){
     .workshops-listing .workshop-item, .trainer-listing .trainer-list{
         width: calc(50% - 13px);

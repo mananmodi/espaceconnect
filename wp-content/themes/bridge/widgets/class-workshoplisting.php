@@ -96,7 +96,19 @@ class Workshoplisting extends Widget_Base
 
         if ($workshops->have_posts()) :
 ?>
-
+            <div class="category-section">
+              <span>Categories:</span>
+                <div class="dropdown">
+                <select id="workshop-category">
+                    <option value="" disabled selected>Choose a category</option>
+                    <option value="momkidclass">Mom kids class</option>
+                    <option value="seniors60+">Seniors (60+)g</option>
+                    <option value="creativeworkshops">Creative workshops</option>
+                    <option value="dancingladystyle">Dancing lady style</option>
+                  
+                </select>
+                </div>
+            </div>
             <div class="workshops-listing"> <!-- Neutral wrapper class -->
                 <?php while ($workshops->have_posts()) : $workshops->the_post(); ?>
                     <div class="workshop-item"> <!-- Neutral item class -->
