@@ -416,62 +416,6 @@ if(is_array($bridge_qode_footer_classes_array) && count($bridge_qode_footer_clas
 </div>
 </div>
  <!-- Slick Slider JS & Initialization -->
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script>
-	jQuery(document).ready(function($) {
-		$('.workshops-slider').slick({
-			dots: false,
-			arrows: true,
-			autoplay: true,
-			slidesToShow: 3,
-			slidesToScroll: 1,
-			responsive: [
-				{
-					breakpoint: 1100, // tablet
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-						
-					}
-				},
-				{
-					breakpoint: 767, // mobile
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						
-					}
-				}
-			]
-		});
-		$('.trainer-slider').slick({
-			dots: false,
-			arrows: true,
-			autoplay: true,
-			slidesToShow: 4,
-			slidesToScroll: 1,
-			responsive: [
-				{
-					breakpoint: 1100, // tablet
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 1,
-						
-					}
-				},
-				{
-					breakpoint: 767, // mobile
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						
-					}
-				}
-			]
-		});
-	});
-
-  </script>
-<?php wp_footer(); ?>
+ <?php wp_footer(); ?>
 </body>
 </html>

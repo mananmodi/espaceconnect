@@ -67,15 +67,15 @@ class Workshopslider extends Widget_Base
             )
         );
 
-        	$this->add_control(
-			'section_title',
-			array(
-				'label'       => esc_html__( 'Section Title', 'fgi' ),
-				'type'        => \Elementor\Controls_Manager::TEXT,
-				'placeholder' => esc_html__( 'Section - Title', 'fgi' ),
-			)
-		);
-        
+        $this->add_control(
+            'section_title',
+            array(
+                'label'       => esc_html__('Section Title', 'fgi'),
+                'type'        => \Elementor\Controls_Manager::TEXT,
+                'placeholder' => esc_html__('Section - Title', 'fgi'),
+            )
+        );
+
         $this->end_controls_section();
     }
 
@@ -88,48 +88,50 @@ class Workshopslider extends Widget_Base
 
         $args = array(
             'post_type' => 'product',
-              'posts_per_page' => 10
+            'posts_per_page' => 10
         );
 
-        $workshops =new \WP_Query($args);
+        $workshops = new \WP_Query($args);
 
-        
+
 
         if ($workshops->have_posts()) :
 ?>
 
-       <div class="workshops-slider">
+            <div class="workshops-slider">
                 <?php if ($workshops->have_posts()) : ?>
                     <?php while ($workshops->have_posts()) : $workshops->the_post(); ?>
                         <div class="workshop-item">
-                            
+
                             <!-- Featured Image -->
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="workshops-feature-image">
-                                    
-                                <a href="<?php the_permalink(); ?>">
-                                    <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="<?php the_title_attribute(); ?>">
-                                </a>
-                               </div>
-                             <?php endif; ?>
+
+                                    <a href="<?php the_permalink(); ?>">
+                                        <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="<?php the_title_attribute(); ?>">
+                                    </a>
+                                </div>
+                            <?php endif; ?>
                             <!-- Title -->
                             <h3 class="workshops-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-                                <!-- Dates -->
-                                <?php 
-                                $dates = get_field('workshop_date', get_the_ID());
-                                if ($dates) : 
-                                ?>
-                                    <p class="workshops-dates">                                     
-                                        <?php echo date('F j, Y', strtotime($dates)); ?>
-                                    </p>
-                                <?php endif; ?>
-                                
-                           
-                           
+                            <!-- Dates -->
+                            <?php
+                            $dates = get_field('workshop_date', get_the_ID());
+                            if ($dates) :
+                            ?>
+                                <p class="workshops-dates">
+                                    <?php echo date('F j, Y', strtotime($dates)); ?>
+                                </p>
+                            <?php endif; ?>
+
+
+
 
                             <!-- Excerpt -->
-                            <div class="workshop-short-desc"><p><?php echo wp_kses_post(get_the_excerpt()); ?></p></div>
+                            <div class="workshop-short-desc">
+                                <p><?php echo wp_kses_post(get_the_excerpt()); ?></p>
+                            </div>
 
                             <!-- Read More Button -->
                             <a href="<?php the_permalink(); ?>" class="workshops-btn">Read More</a>
@@ -143,9 +145,8 @@ class Workshopslider extends Widget_Base
             </div>
 
 
-    <?php endif;
+<?php endif;
         wp_reset_postdata();
-       
     }
 
     /** Function content_template() */

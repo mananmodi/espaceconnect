@@ -85,6 +85,10 @@ if (!function_exists('bridge_qode_styles')) {
 
     }
 
+	$theme_version = '1.0';
+	wp_enqueue_script( 'slickslider', get_template_directory_uri() . '/js/slickslider.js', array( 'jquery' ), $theme_version, true );
+	wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/customjs.js', array( 'jquery' ), $theme_version, true );
+
 	add_action('wp_enqueue_scripts', 'bridge_qode_styles');
 }
 
