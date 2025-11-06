@@ -49,21 +49,39 @@ if ($dates) :
 <?php endif; ?>
 <?php
 $start_time = get_field('start_time', get_the_ID());
-$end_time = get_field('end_time', get_the_ID());
-if (!empty($start_time) && !empty($end_time)) :
-?>
+$end_time = get_field('end_time', get_the_ID());?>
+<?php if (!empty($start_time) && !empty($end_time)) : ?>
 	<p class="workshops-dates">
-		<strong><?php echo __('Time'); ?>:</strong> <?php echo $start_time; ?> - <?php echo $end_time; ?>
+		<strong><?php echo __('Time', 'textdomain'); ?>:</strong>
+		<?php echo esc_html($start_time); ?> - <?php echo esc_html($end_time); ?>
 	</p>
 <?php endif; ?>
+
 <?php
 $trainer_name = get_field('trainer_name', get_the_ID());
 if (!empty($trainer_name)) :
 ?>
-	<p class="workshops-dates">
-		<strong><?php echo __('Trainer'); ?>:</strong> <a href="<?php echo esc_url(get_permalink($trainer_name->ID)); ?>" title="<?php echo esc_attr($trainer_name->post_title); ?>"><?php echo esc_html($trainer_name->post_title); ?></a>
-		<a href="<?php echo esc_url(get_permalink($trainer_name->ID)); ?>"><img src=" <?php echo esc_url(get_the_post_thumbnail_url($trainer_name->ID, 'full')); ?>" title="<?php echo esc_attr($trainer_name->post_title); ?>" /></a>
-	</p>
+	<div class="workshops-dates workshops-trainer">
+		<div class="trainer-n">
+			<strong><?php echo __('Trainer', 'textdomain'); ?>:</strong>
+			<a href="<?php echo esc_url(get_permalink($trainer_name->ID)); ?>" title="<?php echo esc_attr($trainer_name->post_title); ?>">
+				<?php echo esc_html($trainer_name->post_title); ?>
+			</a>
+		</div>
+		<div class="w-trainer-img">
+			<a href="<?php echo esc_url(get_permalink($trainer_name->ID)); ?>">
+				<img src="<?php echo esc_url(get_the_post_thumbnail_url($trainer_name->ID, 'full')); ?>" alt="<?php echo esc_attr($trainer_name->post_title); ?>" />
+			</a>
+		</div>
+	</div>
 <?php endif; ?>
+
+<?php 
+$booknow_url = get_field('book_now_url', get_the_ID());
+if ($booknow_url) : ?>
+	<a href="<?php echo esc_url($booknow_url); ?>" class="book-btn"><?php echo esc_html_e('Book Now'); ?> </a>
+<?php endif; ?>
+
+
 
 </div>

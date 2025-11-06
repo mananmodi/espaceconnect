@@ -3828,3 +3828,5 @@ if( ! function_exists( 'bridge_qode_set_portfolio_single_type_body_class' ) ) {
 }
 
 require get_template_directory() . '/class-widget-loader.php';
+
+

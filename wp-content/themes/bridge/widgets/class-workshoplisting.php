@@ -97,7 +97,7 @@ class Workshoplisting extends Widget_Base
         if ($workshops->have_posts()) :
 ?>
             <div class="category-section">
-              <span>Categories:</span>
+              <span><?php echo esc_html_e('Categories:');?></span>
                 <div class="dropdown">
                 <select id="workshop-category">
                     <option value="" disabled selected>Choose a category</option>
@@ -139,7 +139,7 @@ class Workshoplisting extends Widget_Base
                         </div>
 
                         <!-- Read More Button -->
-                        <a href="<?php the_permalink(); ?>" class="workshops-btn">Read More</a>
+                        <a href="<?php the_permalink(); ?>" class="workshops-btn"><?php echo esc_html_e('Read More');?></a>
 
                     </div>
                 <?php endwhile;

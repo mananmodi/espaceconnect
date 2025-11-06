@@ -55,7 +55,7 @@
 													<div class="column1">
 													<?php elseif ($sidebar == "2") : ?>
 														<div class="two_columns_75_25 background_color_sidebar grid2 clearfix">
-															<div class="column1">
+															<div class="">
 															<?php endif; ?>
 
 															<div class="column_inner">
@@ -64,7 +64,7 @@
 																	get_template_part('templates/' . $single_loop, 'loop');
 																	?>
 																</div>
-																<p><?php echo esc_html_e("Associated Workshops"); ?></p>
+																<h2 class="ass-title"><?php echo esc_html_e("Associated Workshops"); ?></h2>
 																<?php
 
 																$args = array(
