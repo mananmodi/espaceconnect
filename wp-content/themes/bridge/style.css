@@ -291,7 +291,7 @@ ul.top-info li a:hover, ul.top-info li a:hover i{
     height: auto !important;
 } 
 .single-trainer  .content.content_top_margin, .woocommerce.single-product  .content.content_top_margin{
-    margin-top: 205px !important;
+    margin-top: 175px !important;
 }
 .woocommerce.single-product .content .container {
     padding-left: 50px;
@@ -389,6 +389,9 @@ body.woocommerce .product h1.product_title {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.cf7_custom_style_2 input.wpcf7-form-control.wpcf7-submit, .cf7_custom_style_2 input.wpcf7-form-control.wpcf7-submit:not([disabled]){
+    font-weight: normal;
 }
  .woocommerce  .q_accordion_holder div.accordion_content_inner p{
     color: #38373D;
