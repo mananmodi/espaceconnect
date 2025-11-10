@@ -415,6 +415,7 @@ if(is_array($bridge_qode_footer_classes_array) && count($bridge_qode_footer_clas
 	
 </div>
 </div>
-<?php wp_footer(); ?>
+ <!-- Slick Slider JS & Initialization -->
+ <?php wp_footer(); ?>
 </body>
 </html>

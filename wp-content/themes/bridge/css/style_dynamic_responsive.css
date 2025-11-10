@@ -53,6 +53,10 @@
 		
 		
 		
+					body,
+			p,
+            .elementor-widget-heading p.elementor-heading-title {
+			font-size: 16px; 			line-height: 24px; 						}
 		
 		
 		
@@ -65,7 +69,10 @@
 			min-height: 600px;
 			}
 		
-				
+							.footer_bottom {
+			line-height: 27px;
+			}
+		
 					.footer_top.footer_top_full {
 			padding-right:10px;
 			}

@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php
+
 $bridge_qode_id = bridge_qode_get_page_id();
 $bridge_qode_sidebar = get_post_meta($bridge_qode_id, "qode_show-sidebar", true); 
 

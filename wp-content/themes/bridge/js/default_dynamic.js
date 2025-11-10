@@ -10,14 +10,15 @@
 		var paspartu_width_init = 0.02;
         var add_for_admin_bar = jQuery('body').hasClass('admin-bar') ? 32 : 0;
 
-						header_height = 100;
-											min_header_height_sticky = 70;
+						header_height = 140;
+									min_header_height_scroll = 110;
+									min_header_height_sticky = 70;
 									scroll_amount_for_sticky = 800;
 											
 		var logo_height = 130; // proya logo height
 		var logo_width = 280; // proya logo width
-								logo_height = 40;
-						logo_width = 100;
+								logo_height = 161;
+						logo_width = 200;
 
 												header_top_height = 33;
 						var loading_text;
@@ -139,7 +140,7 @@
 
 		var no_ajax_pages = [];
 		var qode_root = 'http://espaceconnect.acute.com/';
-		var theme_root = 'http://espaceconnect.acute.com/wp-content/themes/bridge/bridge/';
+		var theme_root = 'http://espaceconnect.acute.com/wp-content/themes/bridge/';
 					var header_style_admin = "";
 				if(typeof no_ajax_obj !== 'undefined') {
 		no_ajax_pages = no_ajax_obj.no_ajax_pages;

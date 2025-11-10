@@ -13,6 +13,7 @@ if (!function_exists('bridge_qode_styles')) {
         wp_enqueue_style("bridge-default-style", QODE_ROOT . "/style.css");
         bridge_qode_icon_collections()->enqueueStyles();
         wp_enqueue_style("bridge-stylesheet", QODE_ROOT . "/css/stylesheet.min.css");
+		
 
         if ($woocommerce) {
             wp_enqueue_style("bridge-woocommerce", QODE_ROOT . "/css/woocommerce.min.css");
@@ -83,6 +84,10 @@ if (!function_exists('bridge_qode_styles')) {
 		}
 
     }
+
+	$theme_version = '1.0';
+	wp_enqueue_script( 'slickslider', get_template_directory_uri() . '/js/slickslider.js', array( 'jquery' ), $theme_version, true );
+	wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/customjs.js', array( 'jquery' ), $theme_version, true );
 
 	add_action('wp_enqueue_scripts', 'bridge_qode_styles');
 }
@@ -3821,3 +3826,7 @@ if( ! function_exists( 'bridge_qode_set_portfolio_single_type_body_class' ) ) {
 	
 	add_filter( 'body_class', 'bridge_qode_set_portfolio_single_type_body_class' );
 }
+
+require get_template_directory() . '/class-widget-loader.php';
+
+
