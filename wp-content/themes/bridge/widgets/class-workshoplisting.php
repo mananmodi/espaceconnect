@@ -117,6 +117,7 @@ class Workshoplisting extends Widget_Base
 
         <div class="workshops-listing cvf_universal_container"> <!-- Neutral wrapper class -->
         </div>
+        <div class="loader"></div>
         <input type="hidden" name="current_site_url" id="current_site_url" value="<?php the_permalink(); ?>" />
 
 
