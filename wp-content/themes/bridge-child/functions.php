@@ -5,6 +5,12 @@ if ( ! function_exists( 'bridge_qode_child_theme_enqueue_scripts' ) ) {
 	function bridge_qode_child_theme_enqueue_scripts() {
 		wp_register_style('bridge-childstyle', get_stylesheet_directory_uri() . '/style.css');
 		wp_enqueue_style('bridge-childstyle');
+<<<<<<< HEAD
+	}
+
+	add_action('wp_enqueue_scripts', 'bridge_qode_child_theme_enqueue_scripts', 11);
+}
+=======
 
           // Enqueue custom.js file
         wp_register_script('bridge-child-custom-js', get_stylesheet_directory_uri() . '/custom.js', array('jquery'), null, true);
@@ -23,3 +29,4 @@ add_action('wp_enqueue_scripts', 'enqueue_slick_for_workshops');
 
 
 
+>>>>>>> f60c9d0cad22536669813a00c5dfc24b9b2fda64
