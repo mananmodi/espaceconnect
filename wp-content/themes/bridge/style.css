@@ -112,12 +112,12 @@ a.workshops-btn:hover, a.book-btn:hover{
     background-color:#38373D ;
     color: #ffffff;
 }
-.workshops-listing , .trainer-listing{
+.workshops-listing , .trainer-listing, .workshops-listing .tab-content{
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
 }
-.workshops-listing .workshop-item, .trainer-listing .trainer-list{
+.workshops-listing .workshop-item, .trainer-listing .trainer-list, .workshops-listing .tab-content .workshop-item{
     width: calc(33.33% - 17px);
       padding: 0;
 }
@@ -195,7 +195,7 @@ ul.top-info li a:hover, ul.top-info li a:hover i{
     background-color: #ffffff;
     border: 0px solid #e3e3e3;
     border-radius: 8px;
-    padding: 10px 30px 10px 15px;
+    padding: 10px 40px 10px 15px;
     font-size: 17px;
     color: #38373D;
     cursor: pointer;
@@ -240,16 +240,6 @@ ul.top-info li a:hover, ul.top-info li a:hover i{
   font-size: 40px;
   color: #523F88;
 }
-/* .qodef-e-text::after {
-  content: "\f10e"; 
-  font-family: 'FontAwesome';
-  font-weight: 900;
-  position: absolute;
-  right: 0px; 
-  bottom: 0;
-  font-size: 30px;
-  color: #523F88;
-} */
 .single-trainer .content_inner  .container{
     background-color: #b3a6ba;
 }
@@ -460,8 +450,84 @@ body.woocommerce .q_accordion_holder.accordion .ui-accordion-header:hover{
     background-color: #523F88;
     color:#ffffff !important;
 }
+.cvf-universal-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 0;
+  font-family: 'signika';
+}
+
+.cvf-universal-pagination ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.cvf-universal-pagination ul li.inactive a {
+    cursor: not-allowed;
+}
+.cvf-universal-pagination ul li {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background-color: #fff;
+  min-width: 50px;
+  text-align: center;
+}
+
+
+.cvf-universal-pagination ul li a {
+  text-decoration: none;
+  color: #38373D;
+  display: block;
+}
+
+.cvf-universal-pagination ul li:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+/* Selected (current) page */
+.cvf-universal-pagination ul li.selected {
+  background-color: #523F88;
+  border-color: #523F88;
+  color: #fff;
+}
+
+.cvf-universal-pagination ul li.selected a {
+  color: #fff;
+}
+
+/* Active pages (clickable) */
+.cvf-universal-pagination ul li.active a {
+  color: #38373D;
+}
+
+/* Inactive pages (disabled) */
+.cvf-universal-pagination ul li.inactive {
+   opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #ffffff;
+    color: #38373D;
+}
+
+/* Hover effect for active links */
+.cvf-universal-pagination ul li.active:hover {
+  background-color: #523F88;
+  border-color: #523F88;
+  color: #ffffff;
+}
+.cvf-universal-pagination ul li.active:hover a{
+    color: #ffffff !important;
+}
 @media(max-width:1100px){
-    .workshops-listing .workshop-item, .trainer-listing .trainer-list{
+    .workshops-listing .workshop-item, .trainer-listing .trainer-list, .workshops-listing .tab-content .workshop-item{
         width: calc(50% - 13px);
     }
 }
@@ -485,10 +551,13 @@ body.woocommerce .q_accordion_holder.accordion .ui-accordion-header:hover{
         padding-left: 0;
         padding-right: 0;
     }
+    .cvf-universal-pagination{
+       margin: 20px 0 0;
+    }
     
 }
 @media(max-width:767px){
-    .workshops-listing .workshop-item, .trainer-listing .trainer-list{
+    .workshops-listing .workshop-item, .trainer-listing .trainer-list, .workshops-listing .tab-content .workshop-item{
         width:100%;
     }
     .workshop-short-desc p{
