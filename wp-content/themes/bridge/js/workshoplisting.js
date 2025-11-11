@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
 
   function workshop_listing(page, termid = 0, hashcategory) {
     var current_site_url = $("#current_site_url").val();
+    var workshop_category = $(".workshop_category").val();
 
     $.ajax({
       dataType: "html",
@@ -12,6 +13,7 @@ jQuery(document).ready(function ($) {
         page: page,
         action: "workshop_listing",
         current_site_url: current_site_url,
+        workshop_category: workshop_category,
         workshoplisting_nonce: myAjax.nonce,
         _nonce: myAjax._token,
       },
@@ -52,13 +54,17 @@ jQuery(document).ready(function ($) {
     workshop_listing(pageno);
     $("html, body").animate(
       {
-        scrollTop: $(".cvf_universal_container").offset().top - 90,
+        scrollTop: $(".workshops-listing").offset().top,
       },
       1000
     );
   } else {
     workshop_listing(1);
   }
+
+  $(document).on("change","#workshop-category", function(){
+     workshop_listing(1);
+  });
 
   $(document).on(
     "click",
@@ -81,7 +87,7 @@ jQuery(document).ready(function ($) {
       workshop_listing(page);
       $("html, body").animate(
         {
-          scrollTop: $(".cvf_universal_container").offset().top - 90,
+          scrollTop: $(".workshops-listing").offset().top,
         },
         1000
       );

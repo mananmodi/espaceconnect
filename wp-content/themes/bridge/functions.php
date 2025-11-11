@@ -3993,6 +3993,8 @@ function workshop_listing()
 	if (isset($_POST['page'])) {
 
 		$page = (! empty($_POST['page'])) ? sanitize_text_field(wp_unslash($_POST['page'])) : 1;
+		$workshop_category = (! empty($_POST['workshop_category'])) ? sanitize_text_field(wp_unslash($_POST['workshop_category'])) : '';
+
 		$order_by = (! empty($_POST['order_by'])) ? sanitize_text_field(wp_unslash($_POST['order_by'])) : 'publish_date';
 		$order = (! empty($_POST['order'])) ? sanitize_text_field(wp_unslash($_POST['order'])) : 'desc';
 		$current_site_url = (! empty($_POST['current_site_url'])) ? sanitize_text_field(wp_unslash($_POST['current_site_url'])) : '';
@@ -4030,6 +4032,18 @@ function workshop_listing()
 			// 'post__not_in'         => $featured_posts,
 			'posts_per_page'    => -1,
 		);
+
+		if ( ! empty( $workshop_category ) ) {
+			$tagarray[]  = array(
+				'taxonomy'    => 'product_cat',
+				'field'     => 'term_id',
+				'terms'        => $workshop_category,
+			);
+
+			$args['tax_query'] = $tagarray;
+			$args1['tax_query'] = $tagarray;
+		}
+
 
 		$msg = '';
 

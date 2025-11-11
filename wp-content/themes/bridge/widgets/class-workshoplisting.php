@@ -96,12 +96,12 @@ class Workshoplisting extends Widget_Base
             <div class="category-section">
                 <span><?php echo esc_html_e('Categories:'); ?></span>
                 <div class="dropdown">
-                    <select id="workshop-category">
+                    <select id="workshop-category" class="workshop_category">
                         <option value="" disabled selected><?php echo esc_html_e('Choose a category'); ?></option>
                         <?php
                         foreach ($catterms as $catterm):
                         ?>
-                            <option value="<?php echo esc_attr($catterm->id); ?>"><?php echo esc_html($catterm->name); ?></option>
+                            <option value="<?php echo esc_attr($catterm->term_id); ?>"><?php echo esc_html($catterm->name); ?></option>
                         <?php
 
                         endforeach;

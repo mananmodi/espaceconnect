@@ -95,15 +95,6 @@ class Teamlisting extends Widget_Base
                     $trainer_name  = get_the_title();
 
 
-                    // 2️⃣ Find a workshop that links to this trainer (via 'select_trainer' ACF field)
-                    $workshop_args = array(
-                        'post_type'      => 'workshop',
-                        'posts_per_page' => 1,
-
-                    );
-
-                    $workshops = new \WP_Query($workshop_args);
-
                     ?>
 
                     <!-- Trainer Slide -->
@@ -123,7 +114,9 @@ class Teamlisting extends Widget_Base
             echo '<p>No trainers found.</p>';
         endif;
 
-        wp_reset_postdata();
+          wp_enqueue_script('teamlist', get_template_directory_uri() . '/js/workshoplisting.js', array('jquery', 'elementor-frontend'), '1.0', true);
+
+       
     }
 
     /** Function content_template() */
