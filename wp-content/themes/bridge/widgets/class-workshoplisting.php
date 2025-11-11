@@ -85,69 +85,43 @@ class Workshoplisting extends Widget_Base
         $settings = $this->get_settings_for_display();
 
 
-        $args = array(
-            'post_type' => 'product',
-            'posts_per_page' => -1
-        );
 
-        $workshops = new \WP_Query($args);
+        $catterms = get_terms(array(
+            'taxonomy'   => 'product_cat',
+            'hide_empty' => true,
+        ));
 
-
-
-        if ($workshops->have_posts()) :
+        if (!empty($catterms)):
 ?>
             <div class="category-section">
-              <span><?php echo esc_html_e('Categories:');?></span>
+                <span><?php echo esc_html_e('Categories:'); ?></span>
                 <div class="dropdown">
-                <select id="workshop-category">
-                    <option value="" disabled selected>Choose a category</option>
-                    <option value="momkidclass">Mom kids class</option>
-                    <option value="seniors60+">Seniors (60+)g</option>
-                    <option value="creativeworkshops">Creative workshops</option>
-                    <option value="dancingladystyle">Dancing lady style</option>
-                  
-                </select>
+                    <select id="workshop-category">
+                        <option value="" disabled selected><?php echo esc_html_e('Choose a category'); ?></option>
+                        <?php
+                        foreach ($catterms as $catterm):
+                        ?>
+                            <option value="<?php echo esc_attr($catterm->id); ?>"><?php echo esc_html($catterm->name); ?></option>
+                        <?php
+
+                        endforeach;
+                        ?>
+                    </select>
                 </div>
             </div>
-            <div class="workshops-listing"> <!-- Neutral wrapper class -->
-                <?php while ($workshops->have_posts()) : $workshops->the_post(); ?>
-                    <div class="workshop-item"> <!-- Neutral item class -->
 
-                        <!-- Featured Image -->
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="workshops-feature-image">
-                                <a href="<?php the_permalink(); ?>">
-                                    <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="<?php the_title_attribute(); ?>">
-                                </a>
-                               
-                            </div>
-                        <?php endif; ?>
-                          
-                        <!-- Title -->
-                        <h3 class="workshops-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <?php
-                                $dates = get_field('workshop_date', get_the_ID());
-                                if ($dates) :
-                                ?>
-                                    <p class="workshops-dates">
-                                        <?php echo date('F j, Y', strtotime($dates)); ?>
-                                    </p>
-                                <?php endif; ?>
-                        <!-- Excerpt -->
-                        <div class="workshop-short-desc">
-                            <p><?php echo wp_kses_post(get_the_excerpt()); ?></p>
-                        </div>
+        <?php
+        endif;
 
-                        <!-- Read More Button -->
-                        <a href="<?php the_permalink(); ?>" class="workshops-btn"><?php echo esc_html_e('Read More');?></a>
+        ?>
 
-                    </div>
-                <?php endwhile;
-                wp_reset_postdata(); ?>
-            </div>
+        <div class="workshops-listing cvf_universal_container"> <!-- Neutral wrapper class -->
+        </div>
+        <input type="hidden" name="current_site_url" id="current_site_url" value="<?php the_permalink(); ?>" />
 
 
-<?php endif;
+<?php
+        wp_enqueue_script('workshoplist', get_template_directory_uri() . '/js/workshoplisting.js', array('jquery', 'elementor-frontend'), '1.0', true);
     }
 
     /** Function content_template() */
