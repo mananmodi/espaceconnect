@@ -274,17 +274,44 @@ if ( ! class_exists( 'Qi_Blocks_Framework_Global_Styles' ) ) {
 				// Sanitize key.
 				$san_entry->key = isset( $entry['key'] ) ? sanitize_text_field( wp_strip_all_tags( $entry['key'] ) ) : '';
 
-				// Sanitize fonts if present (keep array but sanitize values).
-				if ( isset( $entry['fonts'] ) && is_array( $entry['fonts'] ) ) {
-					$san_fonts = new stdClass();
+				// Sanitize fonts if present (family, weight, style are arrays).
+				if ( isset( $entry['fonts'] ) && ( is_array( $entry['fonts'] ) || is_object( $entry['fonts'] ) ) ) {
+					$fonts_array = is_object( $entry['fonts'] ) ? (array) $entry['fonts'] : $entry['fonts'];
 
-					foreach ( $entry['fonts'] as $fkey => $fval ) {
-						$san_fonts->{sanitize_key( $fkey )} = sanitize_text_field( wp_strip_all_tags( (string) $fval ) );
+					$san_fonts         = new stdClass();
+					$allowed_font_keys = [ 'family', 'weight', 'style' ];
+
+					foreach ( $allowed_font_keys as $fkey ) {
+
+						if ( isset( $fonts_array[ $fkey ] ) && is_array( $fonts_array[ $fkey ] ) ) {
+
+							// sanitize each element of the array.
+							$san_fonts->$fkey = array_map(
+								function ( $val ) {
+									// number? → clean number.
+									if ( is_numeric( $val ) ) {
+										return intval( $val );
+									}
+
+									// string? → clean string.
+									return sanitize_text_field( wp_strip_all_tags( (string) $val ) );
+								},
+								$fonts_array[ $fkey ]
+							);
+
+						} else {
+							$san_fonts->$fkey = array();
+						}
 					}
 
 					$san_entry->fonts = $san_fonts;
+
 				} else {
-					$san_entry->fonts = new stdClass();
+					$san_entry->fonts = (object) array(
+						'family' => array(),
+						'weight' => array(),
+						'style'  => array(),
+					);
 				}
 
 				// Sanitize values (array of selector/styles objects).
@@ -295,7 +322,6 @@ if ( ! class_exists( 'Qi_Blocks_Framework_Global_Styles' ) ) {
 
 						$san_val           = new stdClass();
 						$san_val->selector = $this->sanitize_block_selector( $val_item['selector'] );
-
 
 						// Sanitize styles using parser/whitelist.
 						$san_val->styles        = isset( $val_item['styles'] ) ? $sanitize_css_block( $val_item['styles'] ) : '';
@@ -461,6 +487,7 @@ if ( ! class_exists( 'Qi_Blocks_Framework_Global_Styles' ) ) {
 						$block_style_fonts = ! empty( $block_style->fonts ) ? (array) $block_style->fonts : array();
 
 						foreach ( array_keys( $fonts ) as $font_key ) {
+
 							if ( array_key_exists( $font_key, $block_style_fonts ) ) {
 								$fonts[ $font_key ] = array_merge( $fonts[ $font_key ], $block_style_fonts[ $font_key ] );
 							}
@@ -478,9 +505,17 @@ if ( ! class_exists( 'Qi_Blocks_Framework_Global_Styles' ) ) {
 							}
 
 							if ( $blocks_removed ) {
-								unset( $global_styles['posts'][ $page_id ][ $block_index ] );
+								$global_post_styles = $global_styles['posts'][ $page_id ];
 
-								$update = true;
+								if ( is_object( $global_post_styles ) ) {
+									unset( $global_styles['posts'][ $page_id ]->{$block_index} );
+
+									$update = true;
+								} elseif ( is_array( $global_post_styles ) ) {
+									unset( $global_styles['posts'][ $page_id ][ $block_index ] );
+
+									$update = true;
+								}
 							}
 						}
 
@@ -510,7 +545,7 @@ if ( ! class_exists( 'Qi_Blocks_Framework_Global_Styles' ) ) {
 					}
 
 					// Update global options indexes.
-					if ( $update ) {
+					if ( $update && is_array( $global_styles['posts'][ $page_id ] ) ) {
 						$global_styles['posts'][ $page_id ] = array_values( $global_styles['posts'][ $page_id ] );
 					}
 				}
