@@ -1,0 +1,2 @@
+<?php
+return ['messages'=>['Our Team'=>'Our Team','View all'=>'View all','Workshops & Classes – What’s On'=>'Aktuelle Workshops &amp; Kurse','http://espaceconnect.acute.com/trainers/'=>'http://espaceconnect.acute.com/trainers/','text-button-d961fa0'=>'View all','title-heading-4802dee'=>'Aktuelle Workshops &amp; Kurse','title-heading-da0e61f'=>'Our Team','url-button-d961fa0'=>'http://espaceconnect.acute.com/trainers/']];

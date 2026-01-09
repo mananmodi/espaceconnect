@@ -74,6 +74,40 @@
             .elementor-widget.elementor-widget-sidebar .widget #lang_sel_list li a:hover,
 			.service_table_inner li.service_table_title_holder i,
 			.latest_post_two_holder .latest_post_two_text a:hover,
+							.myaccount_user a,
+				.woocommerce .select2-results li.select2-highlighted,
+				.woocommerce-page .select2-results li.select2-highlighted,
+				.woocommerce-checkout .chosen-container .chosen-results li.active-result.highlighted,
+				.woocommerce-account .chosen-container .chosen-results li.active-result.highlighted,
+				.woocommerce ins, .woocommerce-page ins,
+				.woocommerce ul.products li.product:hover h6,
+				.woocommerce div.product div.product_meta > span a:hover,
+				.woocommerce div.cart-collaterals div.cart_totals table tr.order-total strong span.amount,
+				.woocommerce-page div.cart-collaterals div.cart_totals table tr.order-total strong span.amount,
+				.woocommerce div.cart-collaterals div.cart_totals table tr.order-total strong,
+				.woocommerce .checkout-opener-text a,
+				.woocommerce form.checkout table.shop_table tfoot tr.order-total th,
+				.woocommerce form.checkout table.shop_table tfoot tr.order-total td span.amount,
+				.woocommerce aside ul.product_list_widget li > a:hover,
+				.woocommerce aside ul.product-categories li > a:hover,
+				.woocommerce aside ul.product_list_widget li span.amount,
+				aside ul.product_list_widget li span.amount,
+				.woocommerce aside .widget ul.product-categories a:hover,
+				.woocommerce-page aside .widget ul.product-categories a:hover,
+				.wpb_widgetised_column ul.product_list_widget li > a:hover,
+				.wpb_widgetised_column ul.product-categories li > a:hover,
+				.wpb_widgetised_column ul.product_list_widget li span.amount,
+				.wpb_widgetised_column .widget ul.product-categories a:hover,
+                .elementor-widget.elementor-widget-sidebar ul.product_list_widget li > a:hover,
+                .elementor-widget.elementor-widget-sidebar ul.product-categories li > a:hover,
+                .elementor-widget.elementor-widget-sidebar ul.product_list_widget li span.amount,
+                .elementor-widget.elementor-widget-sidebar .widget ul.product-categories a:hover,
+				.shopping_cart_header .header_cart:hover i,
+				.woocommerce-product-rating a:hover,
+				.select2-container--default.select2-container--open .select2-selection--single,
+				.select2-container--default .select2-results__option[aria-selected=true],
+				.select2-container--default .select2-results__option--highlighted[aria-selected],
+				.wp-block-woocommerce-filter-wrapper .wc-block-components-price-slider__range-input-progress,
 						.q_team .q_team_social_holder .q_social_icon_holder:hover .simple_social,
 			.portfolio_template_8 .portfolio_detail .info .category,
 			.portfolio_navigation.navigation_title .post_info span.categories,
@@ -176,6 +210,14 @@
 			.animated_icon_inner span.animated_icon_back i,
 			body:not(.search-results) .blog_holder article.format-link .post_text:hover .post_text_inner,
 			body:not(.search-results) .blog_holder article.format-quote .post_text:hover .post_text_inner,
+							.woocommerce .button:hover,
+				.woocommerce-page .button:hover,
+				.woocommerce #submit:hover,
+				.woocommerce ul.products li.product a.qbutton:hover,
+				.woocommerce-page ul.products li.product a.qbutton:hover,
+				.woocommerce ul.products li.product .added_to_cart:hover,
+				.wp-block-woocommerce-filter-wrapper .wc-block-components-price-slider__actions button:hover,
+				.wp-block-woocommerce-filter-wrapper .wc-block-components-price-slider__actions button[type=submit]:not(.wp-block-search__button).wc-block-components-filter-submit-button:hover,
 						input.wpcf7-form-control.wpcf7-submit:not([disabled]):hover,
 			.portfolio_main_holder .item_holder.image_subtle_rotate_zoom_hover .icons_holder a:hover,
 			.tabs_box_navigation.sf-timetable-menu .tabs_box_navigation_selected{
@@ -234,6 +276,24 @@
 			.qode_call_to_action.container,
 			.qode_carousels .flex-control-paging li a.flex-active,
 			.animated_icon_inner span.animated_icon_back i,
+							.woocommerce .button:hover,
+				.woocommerce-page .button:hover,
+				.woocommerce #submit:hover,
+				.woocommerce ul.products li.product a.qbutton:hover,
+				.woocommerce-page ul.products li.product a.qbutton:hover,
+				.woocommerce ul.products li.product .added_to_cart:hover,
+				.woocommerce .quantity .minus:hover,
+				.woocommerce #content .quantity .minus:hover,
+				.woocommerce-page .quantity .minus:hover,
+				.woocommerce-page #content .quantity .minus:hover,
+				.woocommerce .quantity .plus:hover,
+				.woocommerce #content .quantity .plus:hover,
+				.woocommerce-page .quantity .plus:hover,
+				.woocommerce-page #content .quantity .plus:hover,
+				.woocommerce .widget_price_filter .ui-slider-horizontal .ui-slider-range,
+				.woocommerce-page .widget_price_filter .ui-slider-horizontal .ui-slider-range,
+				.wp-block-woocommerce-filter-wrapper .wc-block-components-price-slider__actions button:hover,
+				.wp-block-woocommerce-filter-wrapper .wc-block-components-price-slider__actions button[type=submit]:not(.wp-block-search__button).wc-block-components-filter-submit-button:hover,
 						.q_circles_holder .q_circle_inner2:hover,
 			input.wpcf7-form-control.wpcf7-submit:not([disabled]):hover,
 			.portfolio_main_holder .item_holder.subtle_vertical_hover .icons_holder a,
@@ -395,7 +455,7 @@
 		
 						header.fixed_hiding .q_logo a,
 				header.fixed_hiding .q_logo{
-				max-height: 80px;
+				max-height: 124px;
 				}
 				
 		
@@ -540,6 +600,25 @@
 		
 		
 		
+					.woocommerce input[type='text']:not(.qode_search_field):not(.qty),
+			.woocommerce input[type='password'],
+			.woocommerce input[type='email'],
+			.woocommerce-page input[type='text']:not(.qode_search_field):not(.qty),
+			.woocommerce-page input[type='password'],
+			.woocommerce-page input[type='email'],
+			.woocommerce-page input[type='tel'],
+			.woocommerce textarea,
+			.woocommerce-page textarea,
+			.woocommerce .select2-container .select2-choice,
+			.woocommerce-page .select2-container .select2-choice,
+			.woocommerce .select2-dropdown-open.select2-drop-above .select2-choice,
+			.woocommerce .select2-dropdown-open.select2-drop-above .select2-choices,
+			.woocommerce-page .select2-dropdown-open.select2-drop-above .select2-choice,
+			.woocommerce-page .select2-dropdown-open.select2-drop-above .select2-choices,
+			.select2-results, .select2-drop,
+			.woocommerce .select2-container .select2-choice .select2-arrow .select2-arrow:after,
+			.woocommerce-page .select2-container .select2-choice .select2-arrow:after {
+			color: #38373d			}
 		
 					h1,
 			.h1,
@@ -643,6 +722,44 @@
 			section.side_menu #lang_sel_click ul ul a,
 			section.side_menu #lang_sel_click ul ul a:visited{
 			color: #969598 !important;			}
+							.woocommerce del,
+				.woocommerce-page del,
+				.woocommerce input[type='text']:not(.qode_search_field),
+				.woocommerce input[type='password'],
+				.woocommerce input[type='email'],
+				.woocommerce-page input[type='text']:not(.qode_search_field),
+				.woocommerce-page input[type='password'],
+				.woocommerce-page input[type='email'],
+				.woocommerce-page input[type='tel'],
+				.woocommerce textarea,
+				.woocommerce-page textarea,
+				.woocommerce .select2-container .select2-choice,
+				.woocommerce-page .select2-container .select2-choice,
+				.woocommerce .select2-dropdown-open.select2-drop-above .select2-choice,
+				.woocommerce .select2-dropdown-open.select2-drop-above .select2-choices,
+				.woocommerce-page .select2-dropdown-open.select2-drop-above .select2-choice,
+				.woocommerce-page .select2-dropdown-open.select2-drop-above .select2-choices,
+				.woocommerce .chosen-container.chosen-container-single .chosen-single,
+				.woocommerce-page .chosen-container.chosen-container-single .chosen-single,
+				.woocommerce-checkout .form-row .chosen-container-single .chosen-single,
+				.woocommerce ul.products li.product h4,
+				.woocommerce div.product p[itemprop='price'] del,
+				.woocommerce div.product p[itemprop='price'] del span.amount,
+				.woocommerce div.product div.product_meta > span span,
+				.woocommerce div.product div.product_meta > span a,
+				.woocommerce aside ul.product_list_widget li > a,
+				.woocommerce aside ul.product-categories li > a,
+				.woocommerce aside ul.product_list_widget li del span.amount,
+				.wpb_widgetised_column ul.product_list_widget li > a,
+				.wpb_widgetised_column ul.product-categories li > a,
+				.wpb_widgetised_column ul.product_list_widget li del span.amount,
+                .elementor-widget.elementor-widget-sidebar ul.product_list_widget li > a,
+                .elementor-widget.elementor-widget-sidebar ul.product-categories li > a,
+                .elementor-widget.elementor-widget-sidebar ul.product_list_widget li del span.amount,
+				.shopping_cart_dropdown ul li a,
+				.select2-drop{
+				color: #969598;
+				}
 										a, p a{
 			color: #7b68b3;												}
 
@@ -1394,6 +1511,10 @@
 		
 				
 		.breadcrumb, .breadcrumb .current, .breadcrumb a { font-size: 15px;line-height: 18px;text-transform: capitalize;font-family: Signika;font-style: italic;font-weight: 400;}
+
+.qode-pl-holder .qode-prl-loading .qode-prl-loading-msg, .qode-pl-holder .qode-pl-categories ul li a:hover, .qode-pl-holder .qode-pl-categories ul li a.active, .qode-pl-holder .qode-pli .qode-pli-rating, .qode-pl-holder.qode-info-on-image:not(.qode-product-info-light) .qode-pli-category, .qode-pl-holder.qode-info-on-image:not(.qode-product-info-light) .qode-pli-excerpt, .qode-pl-holder.qode-info-on-image:not(.qode-product-info-light) .qode-pli-price, .qode-pl-holder.qode-info-on-image:not(.qode-product-info-light) .qode-pli-rating, .qode-pl-holder.qode-info-below-image .qode-pli .qode-pli-text-wrapper .qode-pli-add-to-cart a:hover { color: #1b3942;}
+
+.qode-single-product-summary .qwfw-add-to-wishlist.qwfw-shortcode, .qode-single-product-summary .qwfw-add-to-wishlist.qwfw-shortcode .qwfw-m-text, .qode-single-product-summary .qwfw-add-to-wishlist.qwfw-shortcode.qwfw--added, .qode-single-product-summary .qwfw-add-to-wishlist.qwfw-shortcode.qwfw--added .qwfw-m-text { color: #1b3942;}
 
 						    blockquote h5{
 		    color: #38373d;
