@@ -5253,22 +5253,4 @@ Call To Action Section shortcode responsive styles - end
     top: 85px;
   }
 }
-
-/*Sukh CSS*/
-.single-trainer .post_image img {
-    object-fit: contain !ompirtant;
-}
-@media only screen and (min-wudth: 768px ){
-.trainer .post_content_holder {
-    display: flex !important;
-    flex-direction: row !important;
-}
-.trainer .post_content_holder .post_image {
-    width: 40% !important;
-    margin-right: 50px;
-}
-.trainer .post_content_holder .post_text {
-    width: 60%;
-}
-}
 /*# sourceMappingURL=../css/responsive.css.map */
