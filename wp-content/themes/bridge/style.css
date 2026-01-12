@@ -589,3 +589,38 @@ body.woocommerce .q_accordion_holder.accordion .ui-accordion-header:hover{
         gap: 12px;
     }
 }
+
+/*Sukh CSS*/
+.single-trainer .post_image img {
+    object-fit: contain !ompirtant;
+}
+nav.main_menu > ul > li > a {
+    padding: 0 10px !important;
+}
+@media only screen and (min-width: 768px ){
+.trainer .post_content_holder {
+    display: flex !important;
+    flex-direction: row !important;
+}
+.trainer .post_content_holder .post_image {
+    width: 30% !important;
+    margin-right: 50px;
+	height:auto;
+}
+.trainer .post_content_holder .post_text {
+    width: 70%;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+	.mobile_menu_button{
+    float: right !important;
+    margin: 0 0px 0 0 !important;
+	}
+	.q_logo img{
+		top:10% !important
+	}
+	.logo_wrapper {
+        left: 100px !important;
+    }
+}
